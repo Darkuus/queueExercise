@@ -1,9 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Content } from './style'
 import api from '../../Services/api';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+//import { PriQueueState, PriQueue } from '../../Store/Reducer/PriQueueReducer';
 
 const PickPriQueue: React.FC = () => {
+
+    //const queue = useSelector<PriQueueState, PriQueue[]>((state) => state.PriQueue)
+
+    useEffect(() =>{
+        //load()
+    })
+
+    // async function load(){
+    //     const PriQueueResponse = await api.get('/PriQueue/1')
+    //     var test = PriQueueResponse.data as PriQueue[]
+        
+    //     dispatch({
+    //         type: "ADD_PRIQUEUE",
+    //         payload: test
+    //     })
+    //     console.log(PriQueueResponse)
+    //     console.log(queue)
+    // }
+
     const [cpf, setCpf] = useState<string>('');
     const dispatch = useDispatch()
 
@@ -11,23 +31,20 @@ const PickPriQueue: React.FC = () => {
         e.preventDefault()
         try{
 
-            if(!cpf || cpf.length < 11){
-                alert('Invalid Cpf :/')
-                return
-            }
-            var request = {
-                cpf: cpf
-            }
-            const response = await api.post('/PriQueue/save/', request)
-            const PriQueueResponse = await api.get('/PriQueue/1')
-
-            dispatch({
-                type: "ADD_PRIQUEUE",
-                payload: PriQueueResponse
-            })
-
-            console.log(PriQueueResponse)
-            alert('nice')
+            // if(!cpf || cpf.length < 11){
+            //     alert('Invalid Cpf :/')
+            //     return
+            // }
+            // var request = {
+            //     cpf: cpf
+            // }
+            // const response = await api.post('/PriQueue/save/', request)
+            // const PriQueueResponse = await api.get<PriQueue>('/PriQueue/1')
+            // console.log(PriQueueResponse.data)
+            // dispatch({
+            //     type: "ADD_PRIQUEUE",
+            //     payload: PriQueueResponse.data
+            // })
         }
         catch(ex){
             alert(`Internal Error: ${ex}`)

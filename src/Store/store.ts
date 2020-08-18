@@ -1,5 +1,7 @@
-import { createStore } from 'redux'
-import { PriQueueReducer } from './Reducer/PriQueueReducer'
+import { createStore } from 'redux';
+import reducer from './combinedReducer';
 import { composeWithDevTools  } from 'redux-devtools-extension'
 
-export const store = createStore(PriQueueReducer, composeWithDevTools())
+export const store = createStore(reducer, composeWithDevTools())
+
+
