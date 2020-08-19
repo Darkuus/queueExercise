@@ -1,50 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Content } from './style'
-import api from '../../Services/api';
 import { useDispatch, useSelector } from 'react-redux';
-//import { PriQueueState, PriQueue } from '../../Store/Reducer/PriQueueReducer';
+import { RootStore } from '../../store';
+import api from '../../Services/api';
+import { GetPriQueue } from '../../Store/Actions/PriQueueActions';
+import { PriQueue } from '../../Types/PriQueue';
 
 const PickPriQueue: React.FC = () => {
-
-    //const queue = useSelector<PriQueueState, PriQueue[]>((state) => state.PriQueue)
-
-    useEffect(() =>{
-        //load()
-    })
-
-    // async function load(){
-    //     const PriQueueResponse = await api.get('/PriQueue/1')
-    //     var test = PriQueueResponse.data as PriQueue[]
-        
-    //     dispatch({
-    //         type: "ADD_PRIQUEUE",
-    //         payload: test
-    //     })
-    //     console.log(PriQueueResponse)
-    //     console.log(queue)
-    // }
-
-    const [cpf, setCpf] = useState<string>('');
+    const [cpf, setCpf] = useState<string>('')
+    const priQueueState = useSelector((state: RootStore) => state.priQueue)
+    const [priQueue, setPriQueue] = useState<PriQueue[]>([])
     const dispatch = useDispatch()
+
+    console.log('priQueue state', priQueueState)
 
     async function handleSubmit(e:React.FormEvent<HTMLFormElement>){
         e.preventDefault()
         try{
 
-            // if(!cpf || cpf.length < 11){
-            //     alert('Invalid Cpf :/')
-            //     return
-            // }
-            // var request = {
-            //     cpf: cpf
-            // }
-            // const response = await api.post('/PriQueue/save/', request)
-            // const PriQueueResponse = await api.get<PriQueue>('/PriQueue/1')
-            // console.log(PriQueueResponse.data)
-            // dispatch({
-            //     type: "ADD_PRIQUEUE",
-            //     payload: PriQueueResponse.data
-            // })
+            if(!cpf || cpf.length < 11){
+                alert('Invalid Cpf :/')
+                return
+            }
+            var request = {
+                cpf: cpf
+            }
+            const response = await api.post('/PriQueue/save/', request)
+            dispatch(GetPriQueue(1))
+            setPriQueue(priQueueState.priQueue)
+            console.log('pri queue state:', priQueue)
         }
         catch(ex){
             alert(`Internal Error: ${ex}`)
@@ -67,7 +51,17 @@ const PickPriQueue: React.FC = () => {
                             Submit
                         </button>
                     </div>
-                    
+                    <div>
+                        <h1>codes:</h1>
+                            <div>
+                                {priQueue.map(queue => {
+                                    console.log('ph hey')
+                                    return (
+                                        <h1 key={queue.CPF}>{queue.CPF}</h1>
+                                    )
+                                })}
+                            </div>
+                    </div>
                 </form>
             </div>
         </Content>

@@ -7,7 +7,7 @@ import PickPriQueue from '../Pages/PickPriQueue/Index';
 const Routes: React.FC = () => (
     <Route>
         <Route component={ Home } path="/" exact />
-        <Route component={ PickPriQueue } path="/PickPriQueue" exact />
+        <Route component={ PickPriQueue } path="/PickPriQueue" />
     </Route>
 );
 

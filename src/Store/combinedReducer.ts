@@ -1,9 +1,9 @@
 import { combineReducers } from "redux"
 import { priQueueReducer } from "./reducer"
 
-const rootReducer = combineReducers({
-  priQueue: priQueueReducer
-})
+// const rootReducer = combineReducers({
+//   priQueue: priQueueReducer
+// })
 
-export type RootState = ReturnType<typeof rootReducer>;
-export default rootReducer;
+// export type RootState = ReturnType<typeof rootReducer>;
+// export default rootReducer;
