@@ -1,4 +1,4 @@
-import { PriQueueDispatchTypes, PRIQUEUE_LOADING, PRIQUEUE_ERROR, PriQueueType, priQueue } from "../../../Types/Redux/PriQueueTypes"
+import { PriQueueDispatchTypes, PRIQUEUE_LOADING, PRIQUEUE_ERROR, PriQueueType, priQueue, DISABLE_PRIQUEUE_LOADING, DISABLE_PRIQUEUE_SUCCESS, DISABLE_PRIQUEUE_ERROR } from "../../../Types/Redux/PriQueueTypes"
 import { PRIQUEUE_SUCCESS } from "../../../Types/PriQueue"
 
 interface InitialState {
@@ -27,6 +27,21 @@ const priQueueReducer = (state: InitialState = initialState, action: PriQueueDis
             return {
                 loading: false,
                 priQueue: action.payload
+            }
+        case DISABLE_PRIQUEUE_LOADING:
+            return {
+                loading: true,
+                priQueue: []
+            }
+        case DISABLE_PRIQUEUE_ERROR:
+            return {
+                loading: false,
+                priQueue: []
+            }
+        case DISABLE_PRIQUEUE_SUCCESS:
+            return {
+                loading: false,
+                priQueue: []
             }
         default:
             return state

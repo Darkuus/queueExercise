@@ -1,5 +1,0 @@
-// import { createStore } from 'redux'
-// import { PriQueueReducer } from './Reducer/PriQueueReducer.txt'
-// import { composeWithDevTools  } from 'redux-devtools-extension'
-
-// export const store = createStore(PriQueueReducer, composeWithDevTools())

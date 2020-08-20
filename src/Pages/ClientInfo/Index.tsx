@@ -1,29 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import api from '../../Services/api';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { RootStore } from '../../store';
-import { GetPriQueue } from '../../Store/Actions/PriQueueActions';
+import { Content } from './style';
 
 const ClientInfo: React.FC = (props) => {
-
-    const priQueueState = useSelector((state: RootStore) => state.priQueue)
-    const dispatch = useDispatch()
-    const [cpf, setCpf] = useState('')
-
-    useEffect(() => {
-        dispatch(GetPriQueue(1))
-        const cpf = priQueueState.priQueue[priQueueState.priQueue.length - 1].CPF
-        const response = api.get(`/PriQueue/${cpf}`)
-        console.log(response)
-    })
+    const clientInfoState = useSelector((state: RootStore) => state.clientInfo.clientInfo)
     return (
-        <div className="container">
-            <h1>Choose your line</h1>
-            <div className="content">
-                <h1>Code:</h1>
-                <h2>{}</h2>
+        <Content>
+            <div className="container">
+                <div className="ticket-container">
+                    <h3>Your ticket is:</h3>
+                    <h2>{clientInfoState.Code}</h2>
+                    <span><b>CPF</b>: {clientInfoState.CPF}</span>
+                </div>
             </div>
-        </div>
+        </Content>
     )
 }
 export default ClientInfo;

@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Content } from './style'
 import { useDispatch } from 'react-redux'
 import {useHistory} from 'react-router-dom'
-import { PickPriQueue as PickPriQueueAction } from '../../Store/Actions/PriQueueActions'
+import { PickNPriQueue as PickNPriQueueAction } from '../../Store/Actions/PriQueueActions'
 
-const PickPriQueue: React.FC = () => {
+const NPickPriQueue: React.FC = () => {
     const [cpf, setCpf] = useState<string>('')
     const dispatch = useDispatch()
     let history = useHistory();
@@ -16,7 +16,7 @@ const PickPriQueue: React.FC = () => {
                 alert('Invalid Cpf :/')
                 return
             }
-            dispatch(PickPriQueueAction(cpf))
+            dispatch(PickNPriQueueAction(cpf))
             history.push('/ClientInfo')
         }
         catch(ex){
@@ -27,7 +27,7 @@ const PickPriQueue: React.FC = () => {
     return (
         <Content className="w-100">
             <div className="container">
-                <h1>Preferential</h1>
+                <h1>Non Preferential</h1>
                 <form onSubmit={handleSubmit}>
                     <div>
                         <span className="mb-1">
@@ -46,4 +46,4 @@ const PickPriQueue: React.FC = () => {
     )
 }
 
-export default PickPriQueue;
+export default NPickPriQueue;
