@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Content } from './style'
 import { useDispatch } from 'react-redux'
 import {useHistory} from 'react-router-dom'
-import { PickNPriQueue as PickNPriQueueAction } from '../../Store/Actions/PriQueueActions'
+import { PickNPriQueue as PickNPriQueueAction } from '../../Store/Actions/NPriQueueActions'
 
 const NPickPriQueue: React.FC = () => {
     const [cpf, setCpf] = useState<string>('')
