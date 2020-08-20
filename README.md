@@ -15,14 +15,25 @@ npm install
 yarn install
 ```
 
+## Brief Introduction
+
+There\`re two main groups of pages in this application.
+
+### 1. Client Side
+- **Home**: Here the users choose in which queue they want to enter.
+
+
+- **PickQueue**: Here the users can insert their **CPF** to get a ticket.
+
+
+- **ClientInfo**: Here the users can see their ticket that they get in the previous page (PickQueue)
+
+### 2. Manager Side
+- **Box**: Here the managers can track clients tickets and call next ticket.
+
 ## Usage
+**PickQueue** and **Box** pages have their variants (Prioriority and Non-Priority):
 
-```python
-import foobar
+`/PickPriPueue` to access the page where the user can pick a token in the Priority Queue
 
-
-
-foobar.pluralize('word') # returns 'words'
-foobar.pluralize('goose') # returns 'geese'
-foobar.singularize('phenomena') # returns 'phenomenon'
-```
+`/PriBox` 
