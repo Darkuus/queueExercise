@@ -6,14 +6,16 @@ import PickPriQueue from '../Pages/PickPriQueue/Index';
 import ClientInfo from '../Pages/ClientInfo/Index';
 import PriBox from '../Pages/PriBox/Index';
 import NPickPriQueue from '../Pages/PickNPriQueue/Index';
+import NPriBox from '../Pages/NPriBox/Index';
 
 const Routes: React.FC = () => (
     <Route>
         <Route component={ Home } path="/" exact />
         <Route component={ ClientInfo } path="/ClientInfo" />
         <Route component={ PickPriQueue } path="/PickPriQueue" />
-        <Route component={ NPickPriQueue } path="/NPickPriQueue" />
+        <Route component={ NPickPriQueue } path="/PickNPriQueue" />
         <Route component={ PriBox } path="/PriBox" />
+        <Route component={ NPriBox } path="/NPriBox" />
     </Route>
 );
 

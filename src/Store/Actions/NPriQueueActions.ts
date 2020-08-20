@@ -35,7 +35,7 @@ export const GetNPriQueues = (status: number) => async (dispatch: Dispatch<NPriQ
         })
 
         const asyncResponse = await api.get(`/NPriQueue/${status}`)
-
+        
         dispatch({
             type: NPRIQUEUE_SUCCESS,
             payload: asyncResponse.data
