@@ -34,6 +34,10 @@ There\`re two main groups of pages in this application.
 ## Usage
 **PickQueue** and **Box** pages have their variants (Prioriority and Non-Priority):
 
-`/PickPriPueue` to access the page where the user can pick a token in the Priority Queue
+`/PickPriPueue` to access the page where the user can pick a token in the Priority Queue.
 
-`/PriBox` 
+`/PriBox` to access the page where the manager can keep track and call next tokens. 
+
+`/PickNPriPueue` to access the page where the user can pick a token in the Non-Priority Queue.
+
+`/NPriBox` to access the page where the manager can keep track and call next tokens.
