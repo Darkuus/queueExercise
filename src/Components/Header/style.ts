@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Content = styled.div`
     h1{
@@ -10,6 +10,7 @@ export const Content = styled.div`
     }
     .header{
         width: 100vw;
+        height: 6.5rem;
         text-align: center;
         border-bottom: 2px solid #8378F4;
     }
@@ -24,4 +25,4 @@ export const Content = styled.div`
         align-items: center;
         justify-content: flex-end;
     }
-`;
+`

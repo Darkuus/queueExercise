@@ -49,6 +49,16 @@ export default createGlobalStyle`
         font-size: 1.4rem;
         font-weight: bold;
     }
+    .btn-red{
+        padding: .3rem;
+        text-decoration: none;
+        background-color: red;
+        border:none;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
     .input{
         height: 2rem;
         width: 18rem;

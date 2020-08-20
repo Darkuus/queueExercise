@@ -7,9 +7,11 @@ import ClientInfo from '../Pages/ClientInfo/Index';
 import PriBox from '../Pages/PriBox/Index';
 import NPickPriQueue from '../Pages/PickNPriQueue/Index';
 import NPriBox from '../Pages/NPriBox/Index';
+import Header from '../Components/Header/Index';
 
 const Routes: React.FC = () => (
     <Route>
+        <Header/>
         <Route component={ Home } path="/" exact />
         <Route component={ ClientInfo } path="/ClientInfo" />
         <Route component={ PickPriQueue } path="/PickPriQueue" />

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Content } from  './styles';
+import { Content } from  './style';
 import { Link } from 'react-router-dom';
 
 interface HomeButtonProps{

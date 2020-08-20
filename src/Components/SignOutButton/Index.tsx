@@ -2,17 +2,17 @@ import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import { persistor } from '../..';
 
-const HomeButton:React.FC = () => {
+const SignOutButton:React.FC = () => {
 
     function handleClick(){
         persistor.purge()
     }
 
     return (
-        <Link to="/" onClick={handleClick}>
+        <Link to="/" onClick={handleClick} className="btn-red">
             SignOut
         </Link>
     )
 }
 
-export default HomeButton;
+export default SignOutButton;
