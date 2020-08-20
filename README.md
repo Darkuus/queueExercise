@@ -4,8 +4,9 @@ This is a simple solution to the problem proposed by my **High Performance Code*
 
 The problem resumes in using the queue data structure to build an application to manage a bank queue. There\`re two types of queues: **Priority Queue** and a **Non-Priority Queue** and we must use the queue structure to handle the order that the customers are attended.
 
-## Installation
+## Getting Started
 
+### Code from Repository
 Use npm install or yarn install to get all dependencies.
 
 ```bash
@@ -14,6 +15,14 @@ npm install
 ```bash
 yarn install
 ```
+
+### Live Applications
+
+You can access both Api and App that are hosted in **Heroku**
+
+[WebApp](https://queue-h-frontend.herokuapp.com/)
+
+[WebApi](https://queue-h-backend.herokuapp.com/)
 
 ## Brief Introduction
 
